@@ -41,4 +41,4 @@ def start_new():
             print("Error. Please type 'Yes' or 'No'")
 
 guess_number() 
-start_new()
+start_new()   
