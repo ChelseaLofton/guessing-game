@@ -1,5 +1,8 @@
 import random
 
+# guesses_record = 0
+lowest_score = []
+
 def guess_number():
     secret_number = random.randint(1, 101)
     print("Hello! What is your name?")
@@ -22,12 +25,21 @@ def guess_number():
                     num_guesses += 1
                     print(num_guesses)
                 else:
-                    print(f"Congrats {name}! You guessed the number! You got it in ", (num_guesses+1), " guesses.")
+                    num_guesses += 1
+                    print(f"Congrats {name}! You guessed the number! You got it in {num_guesses} guesses.")
+                    lowest_score.insert(0, num_guesses) 
+                    get_high_score(num_guesses)
                     break
             else:
                 print("ERROR: Please only type a number between 1 and 100")
         else:
             print("ERROR: Please only type a number between 1 and 100")
+
+def get_high_score(guesses):
+    if lowest_score > guesses:
+        lowest_score = guesses
+        print(f"Your best score so far is : {lowest_score}")
+        return lowest_score
 
 def start_new():
     print("Would you like to play again? Type 'Yes' or 'No'")
@@ -42,3 +54,4 @@ def start_new():
 
 guess_number() 
 start_new()   
+get_high_score()
