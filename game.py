@@ -12,7 +12,7 @@ def guess_number():
         guess = input("> ")
         if guess.isnumeric():
             guess = int(guess)
-            if guess in range(1, 100):
+            if guess in range(1, 101):
                 if guess > secret_number:
                     print("Too high!")
                     num_guesses += 1
@@ -29,4 +29,16 @@ def guess_number():
         else:
             print("ERROR: Please only type a number between 1 and 100")
 
-guess_number()
+def start_new():
+    print("Would you like to play again? Type 'Yes' or 'No'")
+    while True:
+        answer = input("> ")
+        if answer == "Yes":
+            guess_number()
+        elif answer == "No":
+            break
+        else:
+            print("Error. Please type 'Yes' or 'No'")
+
+guess_number() 
+start_new()
