@@ -30,3 +30,5 @@ def guess_number():
             print("ERROR: Please only type a number between 1 and 100")
 
 guess_number()
+
+# test
